@@ -40,9 +40,6 @@ async function images() {
 		}
 	)
 }
-function cleanimg() {
-	return src('build/assets/images/', {allowEmpty: true}).pipe(clean()) // Удаляем папку "build/assets/images/"
-}
 
 function browsersync() {
     browserSync.init({
@@ -65,7 +62,7 @@ function clear(){
 }
 
 exports.dev = parallel(browsersync, startWatch, html, css, images, fonts)
-exports.build = series(clear, cleanimg, parallel(html, css, images, fonts))
+exports.build = series(clear, parallel(html, css, images, fonts))
 
 
 exports.default = parallel(browsersync, startWatch, html, css, images, fonts)
