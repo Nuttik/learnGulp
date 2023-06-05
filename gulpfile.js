@@ -18,6 +18,11 @@ function css() {
     .pipe(dest('build/assets/styles'))
     .pipe(browserSync.stream())
 }
+function fonts() {
+    return src('src/assets/fonts/**/*')
+    .pipe(dest('build/assets/fonts/'))
+    .pipe(browserSync.stream())
+}
 
 async function images() {
 	imagecomp(
@@ -51,7 +56,7 @@ function startWatch() {
     watch('src/**/*.html', html)
     watch('src/assets/styles/**/*.css', css)
     watch('src/assets/images/**/*', images)
-   // watch('src/assets/fonts/**/*', fonts)
+    watch('src/assets/fonts/**/*', fonts)
 }
 
 function clear(){
@@ -59,10 +64,10 @@ function clear(){
     .pipe(clean());
 }
 
-exports.dev = parallel(browsersync, startWatch, html, css, images)
-exports.build = series(clear, parallel(html, css, images))
+exports.dev = parallel(browsersync, startWatch, html, css, images, fonts)
+exports.build = series(clear, cleanimg, parallel(html, css, images, fonts))
 
 
-exports.default = parallel(browsersync, startWatch, html, css, images)
+exports.default = parallel(browsersync, startWatch, html, css, images, fonts)
 
   
