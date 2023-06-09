@@ -24,6 +24,20 @@ const cleancss = require('gulp-clean-css');
 // Подключаем модуль gulp-clean
 var clean = require('gulp-clean');
 
+// Подключаем модуль gup
+const pug = require('gulp-pug');
+
+function pugGulp(){
+	return src('src/assets/pug/**/*.pug')
+	  .pipe(
+		pug({
+			pretty: true
+		})
+	  )
+	  .pipe(dest('build/'))
+	  .pipe(browserSync.stream())
+  }
+
 function html() {
     return src('src/index.html')
     .pipe(dest('build'))
@@ -90,10 +104,10 @@ function clear(){
     .pipe(clean());
 }
 
-exports.dev = parallel(browsersync, startWatch, html, css, images, fonts, styles)
-exports.build = series(clear, parallel(html, css, images, fonts, styles))
+exports.dev = parallel(browsersync, startWatch, html, css, images, fonts, styles, pugGulp)
+exports.build = series(clear, parallel(html, css, images, fonts, styles, pugGulp))
 
 
-exports.default = parallel(browsersync, startWatch, html, css, images, fonts, styles)
+exports.default = parallel(browsersync, startWatch, html, css, images, fonts, styles, pugGulp)
 
   
