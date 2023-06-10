@@ -17,9 +17,17 @@ const cleancss = require('gulp-clean-css')
 // Подключаем модуль gulp-clean
 var clean = require('gulp-clean')
 
+// Подключаем модуль gup
+const pug = require('gulp-pug');
+
 function html()
 {
-  return src('src/index.html')
+  return src('src/index.pug')
+  .pipe(
+		pug({
+			pretty: true
+		})
+	  )
     .pipe(dest('build'))
     .pipe(browserSync.stream())
 }
@@ -34,7 +42,7 @@ function css()
 		.pipe(browserSync.stream()) // обновляем вкладку браузера
 }
 
-function fonts()
+function fonts() 
 {
   return src('src/assets/fonts/**/*')
     .pipe(dest('build/assets/fonts/'))
@@ -70,7 +78,7 @@ function browsersync()
 
 function startWatch()
 {
-  watch('src/**/*.html', html)
+  watch('src/**/*.pug', html)
   watch('src/assets/styles/**/*.scss', css)
   watch('src/assets/images/**/*', images)
   watch('src/assets/fonts/**/*', fonts)
@@ -87,4 +95,3 @@ exports.build = series(clear, parallel(html, css, images, fonts))
 
 
 exports.default = parallel(browsersync, startWatch, html, css, images, fonts)
-

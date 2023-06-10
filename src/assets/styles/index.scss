@@ -1,1 +1,8 @@
-@import "./components/header";
+//служебное
+
+@import "./utils/reset";
+//компоненты
+@import "./components/link";
+//секции
+@import "./sections/header";
+
