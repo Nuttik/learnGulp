@@ -20,20 +20,14 @@ var clean = require('gulp-clean')
 // Подключаем модуль gup
 const pug = require('gulp-pug');
 
-function pugGulp(){
-	return src('src/assets/pug/**/*.pug')
-	  .pipe(
+function html()
+{
+  return src('src/index.pug')
+  .pipe(
 		pug({
 			pretty: true
 		})
 	  )
-	  .pipe(dest('build/'))
-	  .pipe(browserSync.stream())
-  }
-
-function html()
-{
-  return src('src/index.html')
     .pipe(dest('build'))
     .pipe(browserSync.stream())
 }
@@ -84,7 +78,7 @@ function browsersync()
 
 function startWatch()
 {
-  watch('src/**/*.html', html)
+  watch('src/**/*.pug', html)
   watch('src/assets/styles/**/*.scss', css)
   watch('src/assets/images/**/*', images)
   watch('src/assets/fonts/**/*', fonts)
@@ -100,4 +94,4 @@ exports.dev   = parallel(browsersync, startWatch, html, css, images, fonts)
 exports.build = series(clear, parallel(html, css, images, fonts))
 
 
-exports.default = parallel(browsersync, startWatch, html, css, images, fonts, pugGulp)
+exports.default = parallel(browsersync, startWatch, html, css, images, fonts)
