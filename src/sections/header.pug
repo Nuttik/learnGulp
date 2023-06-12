@@ -1,7 +1,13 @@
-include ../components/link.pug
+include ../components/menu-link.pug
+include ../components/logotype.pug
+include ../components/button.pug
 
 header
-  nav 
-    ul
-      +link('#', 'Click!')
-      li About
+  div.header__container
+    +logotype()
+    nav 
+      ul.menu.menu_header
+        - let menuItem = ["Home", "About Meetup", "Schedule", "Speakers", "Sponsors", "Venue", "Blog"]
+        each item in menuItem
+          +menuLink('#', item)
+    +button('#', ["button_pink", "buttom_ticket"], "Get Ticket")

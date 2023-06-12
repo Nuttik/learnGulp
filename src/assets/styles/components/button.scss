@@ -1,0 +1,39 @@
+
+.button{
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.75rem 1.125rem;  
+  border: 1px solid $color-primary-pink;
+  color: $color-text-gray-dark;
+  cursor: pointer;
+}
+.button__link{
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.button:hover{
+  background-color: $color-primary-pink;
+  color: #fff;
+  border: 1px solid $color-primary-pink;
+}
+.button:active{
+  background-color: $color-secondary-pink;
+  border: 1px solid $color-secondary-pink;
+}
+.button_pink{
+  background-color: $color-primary-pink;
+  color: #fff;  
+  border: 1px solid $color-primary-pink;
+}
+.button_white-text{
+  color: #fff; 
+}
+.button_pink:hover, .button_pink:active{
+  background-color: $color-secondary-pink;
+  border: 1px solid $color-secondary-pink;
+}
+.buttom_ticket .button__link{
+  padding-left: 2.125rem;
+  background: url("/assets/images/icons/ico-tiket.svg") no-repeat 0px center;
+}

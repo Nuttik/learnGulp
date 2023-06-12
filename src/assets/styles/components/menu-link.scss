@@ -1,0 +1,20 @@
+.menu__link{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  &:hover { 
+    color:#8C8C8C; 
+  }
+  &:active { 
+    color:#8C8C8C; 
+  }    
+}
+.menu_header{
+  .menu__link{
+    margin: 0 0.78rem;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}

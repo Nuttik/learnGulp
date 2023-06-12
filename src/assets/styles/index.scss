@@ -1,8 +1,39 @@
 //служебное
+@import "./utils/normalize";
+@import "./utils/fonts";
+@import "./utils/variables";
 
-@import "./utils/reset";
 //компоненты
-@import "./components/link";
+@import "./components/menu-link";
+@import "./components/logotype";
+@import "./components/button";
+
 //секции
 @import "./sections/header";
+
+*{
+	-webkit-transition: all 0.3s linear;
+	  -moz-transition: all 0.3s linear;
+	  -o-transition: all 0.3s linear;
+	  -ms-transition: all 0.3s linear;
+	  transition: all 0.3s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+	* {
+	  animation-duration: 0.01ms !important;
+	  animation-iteration-count: 1 !important;
+	  transition-duration: 0.01ms !important;
+	  scroll-behavior: auto !important;
+	}
+}
+
+body{
+  font: 1rem $font-stack;
+  color: $color-text-gray;
+  background-color: $color-bg-dark;
+}
+div[class$='container']{
+  max-width: $maxWidth;
+  margin: auto;
+}
 
