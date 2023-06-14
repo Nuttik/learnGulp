@@ -1,8 +1,13 @@
 //служебное
+@import "./utils/normalize";
+@import "./utils/fonts";
+@import "./utils/variables";
+@import "./utils/global";
 
-@import "./utils/reset";
 //компоненты
-@import "./components/link";
+@import "./components/menu-link";
+@import "./components/logotype";
+@import "./components/button";
+
 //секции
 @import "./sections/header";
-

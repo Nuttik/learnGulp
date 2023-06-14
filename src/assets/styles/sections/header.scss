@@ -1,4 +1,16 @@
-header {
-  width: 100px;
+.header__container{
+  display: grid;
+  grid-template-columns: 280px auto 150px;
+  align-items:center;
+  gap: 25px;  
+  padding-top: 21px;
+}
+.menu_header{
+  list-style: none;
+  color:$color-text-white;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px;
 }
