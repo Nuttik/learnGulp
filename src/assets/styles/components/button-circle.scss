@@ -1,0 +1,19 @@
+.button-circle{
+  width: 60px;
+  margin: auto;
+  background: url("../images/bg/ellipse.svg") no-repeat 0px center;  
+  transition: all 0.3s linear;  
+  border-radius: 50%; 
+  &__link{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;  
+    &_down{
+      background: url("../images/arrows/down.svg") no-repeat center;
+      &:hover, &:active{
+        background: url("../images/arrows/down-hover.svg") no-repeat center;
+      }
+    }
+  }
+}

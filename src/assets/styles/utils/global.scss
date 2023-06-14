@@ -1,9 +1,5 @@
 *{
-	-webkit-transition: all 0.3s linear;
-	  -moz-transition: all 0.3s linear;
-	  -o-transition: all 0.3s linear;
-	  -ms-transition: all 0.3s linear;
-	  transition: all 0.3s linear;
+	transition: all 0.3s linear;
 }
 @media (prefers-reduced-motion: reduce) {
 	* {
@@ -22,4 +18,11 @@ body{
 div[class$='container']{
   max-width: $maxWidth;
   margin: auto;
+}
+.section-white{
+  background: $color-text-white;
+  color:$color-text-gray;
+	h2{
+		color:$color-text-dark;
+	}
 }
