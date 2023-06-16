@@ -1,0 +1,7 @@
+mixin li-with-icon(prefix, icon, title, desc) 
+  li(class=prefix+ '__item')
+    div(class=prefix+ '__ico'+ '_'+ icon)
+    p(class=prefix+ '__title')=title 
+<!--/планирую использовать этот миксин в двух секциях. Структура эллемента таже, меняется только наличие текста описания.-->
+    if text
+      p(class=prefix+ '__desc')=text
