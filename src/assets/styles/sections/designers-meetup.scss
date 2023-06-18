@@ -12,10 +12,10 @@
     text-align: center;
     letter-spacing: -0.03em;
     margin: auto 0;
-    background: linear-gradient(135deg, #5EFCE8 0%, #736EFE 100%);
+    background: $linear-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color:#67C1F2;
+    color:$color-secondary-blur;
     background-clip: text;
   }
   p{
