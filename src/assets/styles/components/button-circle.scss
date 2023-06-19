@@ -1,0 +1,23 @@
+.button-circle{
+  width: 60px;
+  margin: auto;
+  background: url("../images/bg/ellipse.svg") no-repeat 0px center;  
+  transition: all 0.3s linear;  
+  border-radius: 50%; 
+  &__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;  
+    &:hover{      
+      svg{
+        fill:$color-secondary-blur;
+      }
+    }
+    svg{
+      fill:$color-text-white;
+    }
+  }
+}

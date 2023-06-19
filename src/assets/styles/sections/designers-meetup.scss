@@ -1,0 +1,44 @@
+.designers-meetup{
+  background: url("../images/bg/elem-04.png") no-repeat 89.2% 66.8%;
+  &__container{
+    background: url("../images/bg/elem-02.png") no-repeat 55px 44.6%,
+                url("../images/bg/elem-03.png") no-repeat 97.6% 34.5%;
+    padding: 78px 0 50px;
+  }
+  h1{
+    font-size: 5.3125rem;
+    line-height: 7.1875rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.03em;
+    margin: auto 0;
+    background: $linear-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color:$color-secondary-blur;
+    background-clip: text;
+  }
+  p{
+    text-align: center;
+    margin: 0.5rem auto 0;
+    max-width: 850px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color:$color-text-gray-desc;
+    &.designers-meetup__date{
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2rem;
+      text-align: center;
+      margin-top: 1.5rem;
+      color:$color-text-white;
+    }
+    &.designers-meetup__place{
+      margin-top: 0;
+      color:$color-text-white;
+    }
+  }
+  .button-circle{  
+    margin-top: 64px;
+  }
+}
