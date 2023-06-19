@@ -13,7 +13,7 @@
     width: 298px;
     height: 169px;
     margin-right: 16px;
-    background: rgba(21, 26, 37, 0.8);
+    background: $color-text-dark + cc;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +31,6 @@
     margin: 0;
   }
 }
-//не знаю как сделать, чтобы внутри родителя у дочернего эллемента после суффикса шло любое окончание, поэтому вынесла отдельно 
 div[class^="feature-list__ico"]{
   min-height:24px;
   width: 30px;
