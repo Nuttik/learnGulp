@@ -1,5 +1,5 @@
 .designers-meetup{
-  background: url("../images/bg/elem-04.png") no-repeat 97.2% 66.8%;
+  background: url("../images/bg/elem-04.png") no-repeat 89.2% 66.8%;
   &__container{
     background: url("../images/bg/elem-02.png") no-repeat 55px 44.6%,
                 url("../images/bg/elem-03.png") no-repeat 97.6% 34.5%;
@@ -12,10 +12,10 @@
     text-align: center;
     letter-spacing: -0.03em;
     margin: auto 0;
-    background: linear-gradient(135deg, #5EFCE8 0%, #736EFE 100%);
+    background: $linear-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color:#67C1F2;
+    color:$color-secondary-blur;
     background-clip: text;
   }
   p{
