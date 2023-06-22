@@ -2,8 +2,12 @@
   width: 60px;
   margin: auto;
   background: url("../images/bg/ellipse.svg") no-repeat 0px center;  
+  background-size: contain;
   transition: all 0.3s linear;  
-  border-radius: 50%; 
+  border-radius: 50%;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__link{
     display: flex;
     justify-content: center;
@@ -19,5 +23,8 @@
     svg{
       fill:$color-text-white;
     }
-  }
+  }  
+  &__arrow_left{
+       transform: rotate(270deg);
+   }
 }
