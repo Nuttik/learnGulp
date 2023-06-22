@@ -1,0 +1,21 @@
+include ../components/list-item-with-icon.pug
+include ../components/button.pug
+include ../components/button-circle.pug
+
+section.about
+  div.about__container-mix
+    .about__info 
+      h2 About Meetup Event
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit quis dui lacus. Aenean purus ut ac sit. Nullam habitant at tempus ut. Enim turpis sollicitudin magna nunc facilisis odo.Lorem ipsum dolor sit amet, consectetur adipiscing sit quis dui lacus. Aenean purus ut ac sit.
+      ul.about__when-and-where
+        +li-with-icon("about", "calendar", "When", 'Friday to Sunday, 1-3 July 2022') 
+        +li-with-icon("about", "place", "Location", 'Bangabandhu International Conference Center, Begum Rokeya Avenue, Dhaka-1207') 
+      .about__buttons-row 
+        +button('#', ["button_pink", "button_ticket"], "Get Ticket")
+        +button('#', ["button_white-border", "button_white-text"], "Learn More")
+    .about__photos
+      .about__photo-1
+        img(src="assets/images/gallery/photo-4.jpg", alt="speaker at the latest design meeting")
+      .about__photo-2 
+        img(src="assets/images/gallery/photo-5.jpg", alt="the auditorium from the last design meeting")
+      +button-circle("#",["button-circle__arrow_left"])
