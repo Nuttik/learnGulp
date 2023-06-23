@@ -1,0 +1,21 @@
+mixin gallery(array)
+  .gallery
+    ul.gallery__wrapper
+      .gallery__items-list
+        each item in array
+          li.gallery__item
+            .gallery__item-info
+              .gallery__item-title= item.title
+              .gallery__item-desc= item.desc
+              .galleru__item-social
+                ul.social-ico
+                  li.social-ico_fb
+                    a(href=item.fb)
+                  li.social-ico_inst
+                    a(href=item.inst) 
+                  li.social-ico_linkedIn
+                    a(href=item.linkedIn) 
+            img(src=item.img, alt=item.alt)     
+      .gallery__tools
+        .gallery__button_prev
+        .gallery__button_next.current
