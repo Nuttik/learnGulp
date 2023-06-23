@@ -1,0 +1,95 @@
+.gallery{
+  position: relative;
+  &__wrapper{
+  overflow: hidden;
+  }
+  &__items-list{
+    display: flex;  
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  &__item{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  &__item:last-child{
+    margin-right: 0px;
+  }
+  &__item-info{
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: calc(100% - 32px);
+    background: $linear-gradient-gallery;
+    border-radius: 0 0px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:flex-end;
+    padding: 0 0 12px 32px;
+  }
+  &__item-title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $color-text-white;
+    margin-bottom: 12px;
+  }
+  &__item-desc{
+    margin-bottom: 12px;
+  }
+  &__tools{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    right: -150px;
+    bottom:0;
+  }  
+  &__button_prev{
+    background: url(../images/arrows/left.svg) no-repeat center;
+  }
+  &__button_next{
+    background: url(../images/arrows/right.svg) no-repeat center;
+  }
+  .social-ico{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      background-image: url(../images/icons/social.png);
+      margin-right: 12px;
+    } 
+    &_inst{
+      background-position: -27px;
+    }
+    &_linkedIn{
+      background-position: -56px;
+    }
+  }
+}
+
+div[class^="gallery__button"]{
+  width: 44px;
+  height: 44px;
+  background-color: $color-gallery-buttons-gray;
+  padding: 0;
+  border-radius: 5px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+div[class^="gallery__button"]:hover{
+  background-color: $color-secondary-pink;
+}
+div[class^="gallery__button"].current{
+  background-color: $color-secondary-pink;
+  cursor: auto;
+}

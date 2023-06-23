@@ -1,0 +1,41 @@
+include ../components/button.pug
+include ../components/gallery.pug
+
+-
+  let arrayItems = [
+            {
+              title:"John Smith",
+              desc:"Designer Manager, IBM",
+              fb:"#",
+              inst:"#",
+              linkedIn:"#",
+              img:"assets/images/gallery/photo-1.jpg",
+              alt:"John Smith Designer Manager, IBM"
+            },
+            {
+              title:"Brooklyn Simmons",
+              desc:"Designer Manager, Google",
+              fb:"#",
+              inst:"#",
+              linkedIn:"#",
+              img:"assets/images/gallery/photo-2.jpg",
+              alt:"Brooklyn Simmons Designer Manager, Google"
+            },
+            {
+              title:"Afolabi David",
+              desc:"Designer Manager, IBM",
+              fb:"#",
+              inst:"#",
+              linkedIn:"#",
+              img:"assets/images/gallery/photo-3.jpg",
+              alt:"Afolabi David Designer Manager, IBM"
+            }
+          ]
+section.speakers 
+  .speakers__container
+    div.speakers__left
+      +gallery(arrayItems)
+    div.speakers__rigth
+      h2 Meet&nbsp;with graeter's&nbsp;speakers
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit quis dui lacus. Aenean purus ut ac sit. Nullam habitant at tempus ut. Enim turpis sollicitudin magna nunc facilisis odo.Lorem ipsum dolor sit amet, consectetur adipiscing sit quis dui lacus. Aenean purus ut ac sit.
+      +button('#', ["button_white-text"], "View All Speaker")
