@@ -20,6 +20,12 @@ var clean = require('gulp-clean')
 // Подключаем модуль gup
 const pug = require('gulp-pug');
 
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
+ 
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
+
 function html()
 {
   return src('src/index.pug')
@@ -67,6 +73,14 @@ async function images()
   )
 }
 
+function scripts() {
+	return src('src/assets/js/*.js') // Берем файлы из источников
+	.pipe(concat('app.min.js')) // Конкатенируем в один файл
+	.pipe(uglify()) // Сжимаем JavaScript
+	.pipe(dest('build/assets/js/')) // Выгружаем готовый файл в папку назначения
+	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
+
 function browsersync()
 {
   browserSync.init({
@@ -82,6 +96,7 @@ function startWatch()
   watch('src/assets/styles/**/*.scss', css)
   watch('src/assets/images/**/*', images)
   watch('src/assets/fonts/**/*', fonts)
+  watch('src/assets/js/**/*', scripts)
 }
 
 function clear()
@@ -90,8 +105,8 @@ function clear()
     .pipe(clean())
 }
 
-exports.dev   = parallel(browsersync, startWatch, html, css, images, fonts)
-exports.build = series(clear, parallel(html, css, images, fonts))
+exports.dev   = parallel(browsersync, startWatch, html, css, images, fonts, scripts)
+exports.build = series(clear, parallel(html, css, images, fonts, scripts))
 
 
-exports.default = parallel(browsersync, startWatch, html, css, images, fonts)
+exports.default = parallel(browsersync, startWatch, html, css, images, fonts, scripts)
