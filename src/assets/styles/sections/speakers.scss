@@ -1,8 +1,8 @@
 .speakers{
   &__container{
     display: flex;  
-    justify-content: space-between;
-    padding:104px 0;
+    justify-content: flex-start;;
+    padding: 104px 0;
     color:$color-text-white;
   }
   h2{
@@ -10,8 +10,9 @@
   }
   &__left{
     position: relative;
-    margin-left: -35%;
     margin-right: 54px;
+    width: 80%; 
+    margin-left: -22%;
   }
   &__rigth{
     max-width: 542px;
