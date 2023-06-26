@@ -51,8 +51,6 @@ let Slider = function(gallery){
           ctx.itemList.style.marginLeft = left - ctx.itemSize - 40 + "px";
         }
       }
-      
-      console.log(ctx.itemList.offsetWidth - ctx.wrapper.offsetWidth)
     }
 
   }
