@@ -11,7 +11,10 @@
 }
 
 body{
-  font: 1rem $font-stack;
+	font-family: $font-stack;
+  font-size: 1rem;
+	font-weight: normal;
+	font-style: normal;
   color: $color-text-gray;
   background-color: $color-bg-dark;
 }
