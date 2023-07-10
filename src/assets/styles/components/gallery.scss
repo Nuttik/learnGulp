@@ -95,3 +95,17 @@ div[class^="gallery__button"].current{
   background-color: $color-secondary-pink;
   cursor: auto;
 }
+//тут нужно высчитать скорость вращения исходы из того, какой путь нужно прости, весь путь занимает 25секунд
+.animation-right{  
+  transition: all 15s linear;
+  animation: moveRight 25s linear infinite;
+}
+.animation-left{
+  transition: all 15s linear;
+  animation: moveRight 25s linear reverse infinite;
+}
+//нужно динамически высчитывать from
+@keyframes moveRight {
+  from{transform: translateX(-27%);}
+  to{transform: translateX(-72.5%);}
+}

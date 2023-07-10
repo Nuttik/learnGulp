@@ -4,13 +4,10 @@ let Slider = function(gallery){
     this.itemWeidth = document.querySelector("img").offsetWidth;
     this.buttonLeft = this.gallery.querySelector(".gallery__button_prev");
     this.buttonRigth = this.gallery.querySelector(".gallery__button_next");    
-
-    this.translation =  -(this.itemWeidth*3 + 30*3);    
-    this.itemList.style.transform = "translateX(" + this.translation + "px)"; 
     let ctx = this;
+    this.itemList.classList.toggle("animation-right"); 
 
     this.clickOnButtons = function(event){
-      ctx.itemList.style.transition = "inherit";
 
       if(event.target == ctx.buttonLeft || event.target == ctx.buttonRigth){
         if(!event.target.classList.contains("current")){          
@@ -19,28 +16,30 @@ let Slider = function(gallery){
         }
       } 
       if(event.target == ctx.buttonLeft){ 
-        ctx.translation += ctx.itemWeidth+40;
-        ctx.itemList.style.transform = "translateX(" + ctx.translation + "px)";    
+        ctx.itemList.classList.toggle("animation-left");
+        ctx.itemList.classList.toggle("animation-right"); 
       }
-      else if(event.target == ctx.buttonRigth){        
-          ctx.translation -= ctx.itemWeidth+40;
-          ctx.itemList.style.transform = "translateX(" + ctx.translation + "px)";
+      else if(event.target == ctx.buttonRigth){   
+        ctx.itemList.classList.toggle("animation-right"); 
+        ctx.itemList.classList.toggle("animation-left"); 
       }
     };
 
     this.jump = function(event){
-      if(ctx.translation <= -(ctx.itemList.offsetWidth-(ctx.itemWeidth*4 + 30*4))){ 
-        ctx.itemList.style.transition = "none";
-        ctx.translation =  -(ctx.itemWeidth*3 + 30*3);
-        ctx.itemList.style.transform = "translateX(" + ctx.translation + "px)";
+      console.log("Закончилась");
+      if(ctx.itemList.classList.contains("animation-right")){ 
+        console.log("Конец"); 
+        ctx.itemList.classList.toggle("animation-right");    
       }
-      if(ctx.translation > -ctx.itemWeidth){
-        console.log(ctx.itemList.offsetWidth -(ctx.itemWeidth*3 + 30*3)*2);
+      if(ctx.itemList.classList.contains("animation-left")){
+        console.log("Начало");
         ctx.itemList.style.transition = "none";
         ctx.translation =  -(ctx.itemList.offsetWidth -(ctx.itemWeidth*3 + 30*3)*2);
         ctx.itemList.style.transform = "translateX(" + ctx.translation + "px)";
       }
     };
+
+
 }
 
 let speakerSlider = new Slider();
